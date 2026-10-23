@@ -15,7 +15,27 @@ SHEET_ID = "1VONM8quKrJ6eGdh8eLz5796ll63h2zXjCkCxA2QAVeo"
 BALANCES_CSV_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Balances"
 TRANSACTIONS_CSV_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Transactions"
 
-STUDENTS = [{'name': 'ANCHETA, IVAN GABONI', 'gender': 'Male', 'acc': '6020-2026-0001', 'lrn': 'M2ES-G6I-0001'}, {'name': 'BALA, ROMUEL SEROTE', 'gender': 'Male', 'acc': '6020-2026-0002', 'lrn': 'M2ES-G6I-0002'}, {'name': 'CABISO, MARVIN JR. PREPOSE', 'gender': 'Male', 'acc': '6020-2026-0003', 'lrn': 'M2ES-G6I-0003'}, {'name': 'DORINGO, RAIZEN PARTIDO', 'gender': 'Male', 'acc': '6020-2026-0004', 'lrn': 'M2ES-G6I-0004'}, {'name': 'ERCILLA, ZACHARY MARTIN', 'gender': 'Male', 'acc': '6020-2026-0005', 'lrn': 'M2ES-G6I-0005'}, {'name': 'PALLORINA, RAFAEL PALISOC', 'gender': 'Male', 'acc': '6020-2026-0006', 'lrn': 'M2ES-G6I-0006'}, {'name': 'VALERO, KENJIE PASCUA', 'gender': 'Male', 'acc': '6020-2026-0007', 'lrn': 'M2ES-G6I-0007'}, {'name': 'ALONZO, KRICHELLE GABRIELLA TAQUIQUI', 'gender': 'Female', 'acc': '6020-2026-0008', 'lrn': 'M2ES-G6I-0008'}, {'name': 'BELONIO, JOANNA BUDUAN', 'gender': 'Female', 'acc': '6020-2026-0009', 'lrn': 'M2ES-G6I-0009'}, {'name': 'CATUBAY, JENNY ROSE SAPIGAO', 'gender': 'Female', 'acc': '6020-2026-0010', 'lrn': 'M2ES-G6I-0010'}, {'name': 'FERNANDEZ, YHANA TACAC', 'gender': 'Female', 'acc': '6020-2026-0011', 'lrn': 'M2ES-G6I-0011'}, {'name': 'GABONI, KATHLIAN FELIPE', 'gender': 'Female', 'acc': '6020-2026-0012', 'lrn': 'M2ES-G6I-0012'}, {'name': 'LANGUIDO, MARIA ELENA MARIANO', 'gender': 'Female', 'acc': '6020-2026-0013', 'lrn': 'M2ES-G6I-0013'}, {'name': 'MIER, PAULYN GRACE BUDUAN', 'gender': 'Female', 'acc': '6020-2026-0014', 'lrn': 'M2ES-G6I-0014'}, {'name': 'QUINTERO, JHAMIRA AGCAOILI', 'gender': 'Female', 'acc': '6020-2026-0015', 'lrn': 'M2ES-G6I-0015'}, {'name': 'SAPIGAO, ANGEL BUHANGIN', 'gender': 'Female', 'acc': '6020-2026-0016', 'lrn': 'M2ES-G6I-0016'}, {'name': 'VELASCO, JANELLA FEY', 'gender': 'Female', 'acc': '6020-2026-0017', 'lrn': 'M2ES-G6I-0017'}, {'name': 'VIERNES, TWILA MAE BUDUAN', 'gender': 'Female', 'acc': '6020-2026-0018', 'lrn': 'M2ES-G6I-0018'}]
+# Exact Account Numbers matching the printed ATM Cards & Passbooks (4020-2026-XXXX)
+STUDENTS = [
+    {'name': 'ANCHETA, IVAN GABONI', 'gender': 'Male', 'acc': '4020-2026-0001', 'lrn': 'M2ES-G6I-0001'},
+    {'name': 'BALA, ROMUEL SEROTE', 'gender': 'Male', 'acc': '4020-2026-0002', 'lrn': 'M2ES-G6I-0002'},
+    {'name': 'CABISO, MARVIN JR. PREPOSE', 'gender': 'Male', 'acc': '4020-2026-0003', 'lrn': 'M2ES-G6I-0003'},
+    {'name': 'DORINGO, RAIZEN PARTIDO', 'gender': 'Male', 'acc': '4020-2026-0004', 'lrn': 'M2ES-G6I-0004'},
+    {'name': 'ERCILLA, ZACHARY MARTIN', 'gender': 'Male', 'acc': '4020-2026-0005', 'lrn': 'M2ES-G6I-0005'},
+    {'name': 'PALLORINA, RAFAEL PALISOC', 'gender': 'Male', 'acc': '4020-2026-0006', 'lrn': 'M2ES-G6I-0006'},
+    {'name': 'VALERO, KENJIE PASCUA', 'gender': 'Male', 'acc': '4020-2026-0007', 'lrn': 'M2ES-G6I-0007'},
+    {'name': 'ALONZO, KRICHELLE GABRIELLA TAQUIQUI', 'gender': 'Female', 'acc': '4020-2026-0008', 'lrn': 'M2ES-G6I-0008'},
+    {'name': 'BELONIO, JOANNA BUDUAN', 'gender': 'Female', 'acc': '4020-2026-0009', 'lrn': 'M2ES-G6I-0009'},
+    {'name': 'CATUBAY, JENNY ROSE SAPIGAO', 'gender': 'Female', 'acc': '4020-2026-0010', 'lrn': 'M2ES-G6I-0010'},
+    {'name': 'FERNANDEZ, YHANA TACAC', 'gender': 'Female', 'acc': '4020-2026-0011', 'lrn': 'M2ES-G6I-0011'},
+    {'name': 'GABONI, KATHLIAN FELIPE', 'gender': 'Female', 'acc': '4020-2026-0012', 'lrn': 'M2ES-G6I-0012'},
+    {'name': 'LANGUIDO, MARIA ELENA MARIANO', 'gender': 'Female', 'acc': '4020-2026-0013', 'lrn': 'M2ES-G6I-0013'},
+    {'name': 'MIER, PAULYN GRACE BUDUAN', 'gender': 'Female', 'acc': '4020-2026-0014', 'lrn': 'M2ES-G6I-0014'},
+    {'name': 'QUINTERO, JHAMIRA AGCAOILI', 'gender': 'Female', 'acc': '4020-2026-0015', 'lrn': 'M2ES-G6I-0015'},
+    {'name': 'SAPIGAO, ANGEL BUHANGIN', 'gender': 'Female', 'acc': '4020-2026-0016', 'lrn': 'M2ES-G6I-0016'},
+    {'name': 'VELASCO, JANELLA FEY', 'gender': 'Female', 'acc': '4020-2026-0017', 'lrn': 'M2ES-G6I-0017'},
+    {'name': 'VIERNES, TWILA MAE BUDUAN', 'gender': 'Female', 'acc': '4020-2026-0018', 'lrn': 'M2ES-G6I-0018'}
+]
 
 if "balances_df" not in st.session_state:
     try:
@@ -62,8 +82,14 @@ if menu == "🔍 Student Balance Lookup":
     student_names = [f"{s['name']} ({s['acc']})" for s in STUDENTS]
     selected_student_str = st.selectbox("Select or Search Student Name / Account Number:", student_names)
     
-    acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
-    student_info = next(s for s in STUDENTS if s['acc'] == acc_no)
+    # Extract account number smoothly from selection
+    if "(" in selected_student_str and ")" in selected_student_str:
+        acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
+    else:
+        acc_no = selected_student_str.strip()
+        
+    student_info = next((s for s in STUDENTS if s['acc'] == acc_no or acc_no in s['acc']), STUDENTS[0])
+    acc_no = student_info['acc']
     
     bal_match = df_bal[df_bal['Account'] == acc_no]
     curr_balance = int(bal_match['Balance'].values[0]) if not bal_match.empty else 50
@@ -100,8 +126,14 @@ elif menu == "👩‍🏫 Teacher Admin Panel":
         st.success("Admin Authenticated! Welcome Teacher Sheila Micah T. Yao")
         student_names = [f"{s['name']} ({s['acc']})" for s in STUDENTS]
         selected_student_str = st.selectbox("Select Student:", student_names)
-        acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
-        student_info = next(s for s in STUDENTS if s['acc'] == acc_no)
+        
+        if "(" in selected_student_str and ")" in selected_student_str:
+            acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
+        else:
+            acc_no = selected_student_str.strip()
+            
+        student_info = next((s for s in STUDENTS if s['acc'] == acc_no or acc_no in s['acc']), STUDENTS[0])
+        acc_no = student_info['acc']
         
         bal_match = df_bal[df_bal['Account'] == acc_no]
         curr_balance = int(bal_match['Balance'].values[0]) if not bal_match.empty else 50
