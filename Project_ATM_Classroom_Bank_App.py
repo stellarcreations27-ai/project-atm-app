@@ -37,6 +37,12 @@ STUDENTS = [
     {'name': 'VIERNES, TWILA MAE BUDUAN', 'gender': 'Female', 'acc': '4020-2026-0018', 'lrn': 'M2ES-G6I-0018'}
 ]
 
+# Check for URL Direct Query Parameters (e.g. ?acc=4020-2026-0001)
+query_params = st.query_params
+default_acc = query_params.get("acc", [None])[0] if isinstance(query_params.get("acc"), list) else query_params.get("acc")
+if not default_acc:
+    default_acc = query_params.get("account", [None])[0] if isinstance(query_params.get("account"), list) else query_params.get("account")
+
 if "balances_df" not in st.session_state:
     try:
         df_b = pd.read_csv(BALANCES_CSV_URL)
@@ -80,31 +86,19 @@ df_tx = st.session_state["tx_df"]
 if menu == "🔍 Student Balance Lookup":
     st.header("🔍 Check Account Balance")
     
-    st.info("💡 **Paano Gamitin ang QR Code:**\n"
-            "- Ang QR code sa ATM card ay naglalaman ng **Account Number** ng bata (hal. `4020-2026-0001`).\n"
-            "- I-scan ang QR gamit ang camera/scanner app o i-type ang Account Number sa search box sa ibaba!")
-    
+    # Calculate initial index based on Direct URL scan parameter
+    initial_idx = 0
+    if default_acc:
+        for idx, s in enumerate(STUDENTS):
+            if s['acc'] == default_acc or default_acc in s['acc']:
+                initial_idx = idx
+                st.success(f"⚡ Direct QR Scan Detected for {s['name']} ({s['acc']})!")
+                break
+
     student_names = [f"{s['name']} ({s['acc']})" for s in STUDENTS]
+    selected_student_str = st.selectbox("Select or Search Student Name / Account Number:", student_names, index=initial_idx)
     
-    # Smart search input box
-    qr_input = st.text_input("📱 Scan / Type QR Account Number or Student Name Here:", value="", placeholder="e.g. 4020-2026-0001 or Ancheta")
-    
-    matched_student = None
-    if qr_input.strip():
-        q = qr_input.strip().lower()
-        matched_student = next((s for s in STUDENTS if q in s['acc'].lower() or q in s['name'].lower()), None)
-    
-    if matched_student:
-        selected_index = STUDENTS.index(matched_student)
-    else:
-        selected_index = 0
-        
-    selected_student_str = st.selectbox(
-        "Select or Confirm Student:", 
-        student_names, 
-        index=selected_index
-    )
-    
+    # Extract account number smoothly from selection
     if "(" in selected_student_str and ")" in selected_student_str:
         acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
     else:
@@ -147,21 +141,15 @@ elif menu == "👩‍🏫 Teacher Admin Panel":
     if pin == "1234":
         st.success("Admin Authenticated! Welcome Teacher Sheila Micah T. Yao")
         
+        initial_idx = 0
+        if default_acc:
+            for idx, s in enumerate(STUDENTS):
+                if s['acc'] == default_acc or default_acc in s['acc']:
+                    initial_idx = idx
+                    break
+
         student_names = [f"{s['name']} ({s['acc']})" for s in STUDENTS]
-        
-        qr_input_admin = st.text_input("📱 Scan / Type QR Account Number or Student Name Here:", value="", placeholder="e.g. 4020-2026-0001 or Ancheta")
-        
-        matched_student_admin = None
-        if qr_input_admin.strip():
-            q_adm = qr_input_admin.strip().lower()
-            matched_student_admin = next((s for s in STUDENTS if q_adm in s['acc'].lower() or q_adm in s['name'].lower()), None)
-            
-        if matched_student_admin:
-            selected_index_admin = STUDENTS.index(matched_student_admin)
-        else:
-            selected_index_admin = 0
-            
-        selected_student_str = st.selectbox("Select Student:", student_names, index=selected_index_admin)
+        selected_student_str = st.selectbox("Select Student:", student_names, index=initial_idx)
         
         if "(" in selected_student_str and ")" in selected_student_str:
             acc_no = selected_student_str.split("(")[1].replace(")", "").strip()
